@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Opdracht-Javascript</title>
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+ <style type = "text/css">
+      body {
+       text-indent: 0;
+       text-align: center;
+       color: red;
+       background: url('https://zippy.gfycat.com/AlarmedAcidicCrocodile.gif');
+       }
+
+       td {
+    text-indent: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 37px;
+    color: red;
+    background: #fff;
+    
+ }
+
+   #example .new { opacity: 0; }
+   #example .div_opacity {
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  opacity: 1;
+}
+
+
+ </style>
+
+
+
+
+<h2 style="margin-top: 5%; background: black;"><big>July Check</big></style></h2>
+
+<p style="background: white;"><big><em>Druk maar even op knopje BUTTON en  dan zal je meteen result zien!</em></big></p>
+
+
+
+<center><button onclick="myFunction1()" style="background: orange;">Druk maar</button></center>
+
+<p id="hoi"></p>
+
+<div id="example" style="padding:0px 0px 0px 100px; width:550px; color: green; position: relative; margin-left: 22%; display:none;">
+BESTE JEROEN, HIERBIJ LEVER IK MIJN OPDRACHT IN. JIJ ZIET DEZE TEXT ALS HET GOED IS. HIERBIJ STUUR IK NOG EEN WARME GROET OP!</div>
+
+
+
+
+<!--  Script voor Kalendar.  ******************************. -->
+<script type="text/javascript">
+var Today=new Date();
+
+Day=new Array("Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag",
+"Vrijdag", "Zaterdag");
+
+Month=new Array("Januari", "Februari", "Mart", "April", "Мei", "Juni", "Juli",
+"Augustus", "September", "Oktober", "November", "December");
+
+document.write("<TABLE width=1265 height=110 style='border:2px solid;'>" +
+"<tr><td align=center>"+ "Vandaag is het</br><br>" + Day[Today.getDay()] +
+"<br><font color=orangered size=+3>" + Today.getDate() + "</font><br><b>" +
+Month[Today.getMonth()] + "</b><br><font color=green size=+1>" +
+Today.getFullYear() + "</font> jaar</td></tr></TABLE>"); 
+
+
+
+// Dit is voor July check.
+
+function myFunction1() { 
+var Today1=new Date();	
+var month1 = Today1.getMonth();
+myFunction(month1);
+}
+
+
+function myFunction(month) { 
+    
+    if (month == 6) {
+     document.getElementById("hoi").innerHTML = "It's July, so it can get really hot";
+    
+    } else {
+    document.getElementById("hoi").innerHTML = "IT’S NOT JULY, SO AT LEAST WE’RE NOT IN THE PEAK OF THE HEAT.";
+    }
+}
+</script>
+
+
+<!-- JQuery script voor bewegende TEXT -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+ $.fn.animate_Text = function() {
+  var string = this.text();
+  return this.each(function(){
+   var $this = $(this);
+   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+   $this.find('span.new').each(function(i, el){
+    setTimeout(function(){ $(el).addClass('div_opacity'); }, 20 * i);
+   });
+  });
+ };
+ $('#example').show();
+ $('#example').animate_Text();
+});
+</script>
+
+
+
+
+
+</body>
+</head>
